@@ -88,8 +88,8 @@ public class Maze {
         ArrayDeque<Point> coordinate = new ArrayDeque<Point>();
         coordinate.add(point1);
 
-        maze[point1.x][point1.y] = "S";
-        maze[maze.length-2][maze.length-2] = "E";
+        maze[point1.x][point1.y] = "S"; // Обозначаем начало лабиринта
+        maze[maze.length-2][maze.length-2] = "E"; // Обозначаем конец лабиринта
         
         while (coordinate.peek() != null) {
             wavePlus(maze, count, coordinate);
