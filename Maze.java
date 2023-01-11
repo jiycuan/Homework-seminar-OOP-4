@@ -31,7 +31,7 @@ public class Maze {
         for (String[] arr : maze) {
             System.out.println(Arrays.toString(arr));
         }
-
+        print(maze);
     }
 
     // Генерирует случайные координаты и проверяет попал ли он в клетку со стенкой. Переходит в move если да.
@@ -89,7 +89,7 @@ public class Maze {
         coordinate.add(point1);
 
         maze[point1.x][point1.y] = "S"; // Обозначаем начало лабиринта
-        maze[maze.length-2][maze.length-2] = "E"; // Обозначаем конец лабиринта
+        maze[maze.length-2][maze.length-2] = "E"; // Обозначаем конец
         
         while (coordinate.peek() != null) {
             wavePlus(maze, count, coordinate);
@@ -130,6 +130,19 @@ public class Maze {
             pointUp.y = point.y+1;
             pointUp.count = point.count+1;
             coordinate.add(pointUp);
+        }        
+    }
+
+    public static void print(String maze[][]) {
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                if (maze[i][j] == "#") {
+                    System.out.print("####");
+                } else {
+                    System.out.printf("%3s ",maze[i][j]);    
+                }
+            }
+            System.out.println();
         }
     }
 }
