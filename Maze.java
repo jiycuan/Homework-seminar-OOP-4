@@ -31,6 +31,13 @@ public class Maze {
         for (String[] arr : maze) {
             System.out.println(Arrays.toString(arr));
         }
+        for (int i = 0; i < maze.length; i++) {
+            for (int j = 0; j < maze.length; j++) {
+                if (i == 0 || j == 0 || i == maze.length-1 || j == maze.length - 1) {
+                    maze[i][j] = "#";
+                }
+            }
+        }
         print(maze);
     }
 
